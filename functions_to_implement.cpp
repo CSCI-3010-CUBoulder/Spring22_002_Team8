@@ -27,10 +27,24 @@ int RemoveTwos(int original);
 std::vector<int> MultiplesFilter(std::vector<int>, int divides_by);
 
 // returns a vector with true for even numbers and false for odd numbers
-std::vector<bool> EvenMask(std::vector<int>);
+std::vector<bool> EvenMask(std::vector<int> input) {
+    std::vector<int> output;
+    for(i=0; i<input.length; i++)
+    {
+        bool is_even = (input[i]%2==0);
+        output.pushback(is_even);
+    }
+}
 
 // returns a vector with true for odd numbers and false for even numbers
-std::vector<bool> OddMask(std::vector<int>);
+std::vector<bool> OddMask(std::vector<int>) {
+    std::vector<int> output;
+    for(i=0; i<input.length; i++)
+    {
+        bool is_odd = (input[i]%2==1);
+        output.pushback(is_odd);
+    }
+}
 
 // Sums all numbers in a vector and returns the resulting value
 int Sum(std::vector<int> nums){
@@ -67,21 +81,16 @@ std::vector<int> SquaresUntil(int n);
 int NthFibonacci(int n);
 
 // takes an int, n, and returns the factorial of that int (n!)
-int Factorial(int n){
-    if (n==0)
-        return 1;
-    return n *Factorial(n-1);
-}
-
+int Factorial(int n);
 
 // returns -1 if the number is negative and 1 if positive
 int Sign(int num){
-    if(num>=0)
-        return 1;
-    else
+    std::cout << "Cause merge error" << std::endl;
+    if(num < 0)
         return -1;
+    else
+        return 1;
 }
-
 
 // takes two vectors of doubles, a and b. The function then removes elements from a if they are also in b.
 // If the double is in b, but not in a, nothing happens.
