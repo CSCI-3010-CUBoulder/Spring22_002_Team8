@@ -1,3 +1,5 @@
+#include <iostream>
+#include <vector>
 /* String functions section */
 #include <iostream>
 #include <vector>
@@ -31,10 +33,22 @@ std::vector<bool> EvenMask(std::vector<int>);
 std::vector<bool> OddMask(std::vector<int>);
 
 // Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<int> nums);
+int Sum(std::vector<int> nums){
+	int sum = 0;
+	for(int i=0;i<nums.size();i++){
+		sum+=nums[i];
+	}
+}
+
+
 
 // Multiplies all numbers in a vector together and returns the resulting value
-int Product(std::vector<int> nums);
+int Product(std::vector<int> nums){
+	int product = 1;
+	for(int i=0; i<nums.size();i++){
+		product *= nums[i];
+	}
+}
 
 // Adds an integer n to each element of a given vector
 std::vector<int> VectorPlusN(std::vector<int> v, int n);
