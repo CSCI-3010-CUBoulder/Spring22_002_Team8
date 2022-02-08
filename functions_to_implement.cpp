@@ -1,5 +1,8 @@
+#include <iostream>
+#include <vector>
 /* String functions section */
-
+#include <iostream>
+#include <vector>
 // Splits a single string on separator into a vector of strings
 std::vector<std::string> Split(std::string whole, std::string separator);
 
@@ -46,10 +49,22 @@ std::vector<bool> OddMask(std::vector<int>) {
 }
 
 // Sums all numbers in a vector and returns the resulting value
-int Sum(std::vector<int> nums);
+int Sum(std::vector<int> nums){
+	int sum = 0;
+	for(int i=0;i<nums.size();i++){
+		sum+=nums[i];
+	}
+}
+
+
 
 // Multiplies all numbers in a vector together and returns the resulting value
-int Product(std::vector<int> nums);
+int Product(std::vector<int> nums){
+	int product = 1;
+	for(int i=0; i<nums.size();i++){
+		product *= nums[i];
+	}
+}
 
 // Adds an integer n to each element of a given vector
 std::vector<int> VectorPlusN(std::vector<int> v, int n);
@@ -105,10 +120,20 @@ double Sum(std::vector<double> nums);
 double Product(std::vector<double> nums);
 
 // Adds an double n to each element of a given vector
-std::vector<double> VectorPlusN(std::vector<double> v, double n);
+std::vector<int> VectorPlusN(std::vector<int> v, int n){
+    for(int i = 0; i < v.size(); i++){
+        v[i]+=n;
+    }
+    return(v);
+};
 
-// Multiples an double n with each element of a given vector
-std::vector<double> VectorTimesN(std::vector<double> v, double n);
+// Multiples an integer n with each element of a given vector
+std::vector<int> VectorTimesN(std::vector<int> v, int n){
+    for(int i = 0; i < v.size(); i++){
+        v[i] = v[i]* n;
+    }
+    return(v);
+};
 
 // takes in two doubles and returns a vector of size n with
 // values n*1, n*2, n*3... up to n*m
@@ -133,3 +158,12 @@ std::vector<int> SubtractN(std::vector<int>, int n);
 
 // subtracts n to each element of the vector
 std::vector<double> SubtractN(std::vector<double>, double n);
+
+int main(){
+    std::vector<int> myints{1,2,3,4};
+    int val = 2;
+    myints = VectorPlusN(myints,val);
+    for(int i = 0; i < myints.size(); i++){
+        std::cout << myints[i];
+    }
+}
